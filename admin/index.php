@@ -11,14 +11,15 @@ $db = new Database;
 
 $query = "SELECT posts.*, categories.name from posts
           INNER JOIN categories
-          ON posts.category = categories.id";
+          ON posts.category = categories.id
+          ORDER BY posts.id ASC";
 
 //Run Query
 
 $posts = $db->select($query);
 
 //Create Query
-$query = "SELECT * from categories";
+$query = "SELECT * from categories ORDER BY id ASC";
 //Run the Query
 $categories = $db->select($query);
 
